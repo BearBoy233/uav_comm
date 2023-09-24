@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<mavlink>
+  <version>2</version>
+  <messages>
+ 
+     <message id="9024" name="GLOBAL_GPS_DOUBLE">
+      <description>[GPS_double] 无人机的GPS信息, 经纬高.</description>
+      <field type="double" name="latitude"> 纬度| Latitude.</field>
+      <field type="double" name="longitude"> 经度| Longitude.</field>
+      <field type="double" name="altitude"> 高度| Altitude.</field>
+    </message>
+    
+    
+    
+    <message id="6001" name="HEART_BEAT">
+      <description>[example] 无人机心跳包，用于监控最基础的飞控模式、电池电量、GPS信息.</description>
+      <field type="uint8_t" name="px4_state"> Subscribe ROSTopic /mavros/state| 当前PX4飞控的状态| From high to low, the flag bits are [7-connected, 6-armed, 5-guided, 4-manual_input, 3-battery_on], 2-0 ToBeUsedLater.</field>
+      <field type="uint8_t" name="px4_mode"> Subscribe ROSTopic /mavros/state/#mode| 当前PX4飞控的模式| Current autopilot mode.</field>
+      <field type="uint8_t" name="px4_sys_state"> Subscribe ROSTopic /mavros/state/#system_state| 当前PX4飞控的系统状态| Current system state.</field>
+      <field type="uint8_t" name="ofb_state"> Subscribe ROSTopic /this/state/onboardflight| 当前机载计算机的控制主程序的状态【待定】| (ENUM STATE_ONBOARD_FLIGHT).</field>
+      <field type="float" name="battery_cell_voltage"> Subscribe ROSTopic /battery/#cell_voltage[0]| 单节电池的电压(V)| Battery cell voltage.</field>
+      <field type="float" name="battery_percentage"> Subscribe ROSTopic /battery/#percentage| 电量百分比(%)| Battery percentage.</field>
+      <field type="uint8_t" name="gps_fix_type"> Subscribe ROSTopic /mavros/gpsstatus/gps1/raw/#gps_fix_type| GPS定位类型.</field>
+      <field type="uint8_t" name="gps_satellites_visible"> Subscribe ROSTopic /mavros/gpsstatus/gps1/raw/#gps_satellites_visible| GPS可见星数.</field>
+    </message>
+
+    <message id="6012" name="UAV_LOC_POS_ENU_YAW">
+      <description>[example] 无人机在ENU惯性系下的xyz坐标和yaw偏航角，注意参考坐标系的原点.</description>
+      <field type="float" name="x"> ENU x(m).</field>
+      <field type="float" name="y"> ENU y(m).</field>
+      <field type="float" name="z"> ENU z(m).</field>
+      <field type="float" name="yaw"> ENU yaw(rad).</field>
+    </message>    
+    <message id="6013" name="UAV_GPS_POS">
+      <description>[example] 无人机的GPS位置信息，注意高度和偏航角的选取.</description>
+      <field type="int32_t" name="latitude"> (degE7)| 纬度| Latitude.</field>
+      <field type="int32_t" name="longitude"> (degE7)| 经度| Longitude.</field>
+      <field type="float" name="altitude"> (m)| 高度-信息源待定| Altitude.</field>
+      <field type="uint16_t" name="hdg_yaw"> (cdeg)| 偏航角-信息源待定| Vehicle heading(yaw angle), 0.0..359.99 degrees.</field>
+    </message>
+    
+    
+
+    <!--
+    <message id="17000" name="TEST_TYPES">
+      <description>Test all field types</description>
+      <field type="char" name="c">char</field>
+      <field type="char[10]" name="s">string</field>
+      <field type="uint8_t" name="u8">uint8_t</field>
+      <field type="uint16_t" name="u16">uint16_t</field>
+      <field print_format="0x%08x" type="uint32_t" name="u32">uint32_t</field>
+      <field type="uint64_t" name="u64">uint64_t</field>
+      <field type="int8_t" name="s8">int8_t</field>
+      <field type="int16_t" name="s16">int16_t</field>
+      <field type="int32_t" name="s32">int32_t</field>
+      <field type="int64_t" name="s64">int64_t</field>
+      <field type="float" name="f">float</field>
+      <field type="double" name="d">double</field>
+      <field type="uint8_t[3]" name="u8_array">uint8_t_array</field>
+      <field type="uint16_t[3]" name="u16_array">uint16_t_array</field>
+      <field type="uint32_t[3]" name="u32_array">uint32_t_array</field>
+      <field type="uint64_t[3]" name="u64_array">uint64_t_array</field>
+      <field type="int8_t[3]" name="s8_array">int8_t_array</field>
+      <field type="int16_t[3]" name="s16_array">int16_t_array</field>
+      <field type="int32_t[3]" name="s32_array">int32_t_array</field>
+      <field type="int64_t[3]" name="s64_array">int64_t_array</field>
+      <field type="float[3]" name="f_array">float_array</field>
+      <field type="double[3]" name="d_array">double_array</field>
+    </message>
+    -->
+
+
+  </messages>
+</mavlink>
+
+
+
+

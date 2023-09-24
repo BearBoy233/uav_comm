@@ -1,0 +1,18 @@
+
+<launch>
+    <!-- vim: set ft=xml noet : -->
+    <!-- commnet uav node launch file -->
+    
+    <!-- ros_udp_pubtopic -->
+    <node pkg="commnet" type="ros_udp_pubtopic" name="ros_udp_pubtopic" output="screen" respawn="false"> 
+        <!-- common param -->          
+        <rosparam command="load" file="$(find commnet)/../common.yaml" />
+    </node>
+    
+    <!-- ros_udp_subtopic -->
+    <node pkg="commnet" type="ros_udp_subtopic" name="ros_udp_subtopic" output="screen" respawn="false"> 
+        <!-- common param -->          
+        <rosparam command="load" file="$(find commnet)/../common.yaml" />
+    </node>
+    
+</launch>

@@ -1,0 +1,21 @@
+## common config parameter
+
+## my_id		this No. (/100-gcs /99-all_uav)
+## /system_id		msg_send No.	
+## /companion_id	msg_rece No.
+my_id: 100
+
+# total uav
+group_uav_num: 3
+
+# UDP boardcast IP
+udp_boardcast_ip: "192.168.1.255"
+# udp_boardcast_ip: "172.20.10.15"
+
+# udp port
+udp_default_port: 13200
+
+## Flag_1ShowRn program_cout_flag (/0-no_cout /1-special_cout /2-all_cout) 
+## Flag_1ShowRn: 2
+
+

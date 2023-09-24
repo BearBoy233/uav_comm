@@ -1,0 +1,8 @@
+<launch>
+
+  <node pkg="sample_py" name="mavros_gps_data" type="mavros_gps_data.py" output="screen">
+        <rosparam command="load" file="$(find commnet)/../common.yaml" />
+  </node>
+
+</launch>
+

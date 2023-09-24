@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="sample_py" name="tutorials_talker" type="tutorials_talker.py" output="screen">
+  </node>
+
+</launch>
+
